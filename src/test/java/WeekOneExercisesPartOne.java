@@ -35,7 +35,7 @@ public class WeekOneExercisesPartOne {
     }
 
     @Test
-    // TODO RESPONSE: What operator is used to determine remainders?
+    // TODO RESPONSE: What operator is used to determine remainders? modulus or %
     public void leftoversWithFivePeopleAndTwoPizzas() {
         int numberOfPeople = 5;
         int numberOfEightSlicePizzas = 2;
@@ -54,9 +54,8 @@ public class WeekOneExercisesPartOne {
     }
 
     @Test
-    @Disabled
     // TODO RESPONSE: In the variable declarations below, why is it necessary to place
-    //  an 'f' after 4.3 but not after 1500 or 4?
+    //  an 'f' after 4.3 but not after 1500 or 4? Because 4.3 is the only actual float number. The others are integers.
     public void simpleInterestReturnsCorrectAmount() {
         float principalAmount = 1500;
         float interestRateAsAPercent = 4.3f;
@@ -78,6 +77,6 @@ public class WeekOneExercisesPartOne {
      * @return
      */
     private float calcSimpleInterest(float principal, float percentInterestRate, float numberOfYears) {
-        return 0;
+        return principal * (1 + (percentInterestRate / 100) * numberOfYears);
     }
 }
