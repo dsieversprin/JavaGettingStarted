@@ -47,7 +47,7 @@ public class WeekOneExercisesPartOne {
     }
 
     private int divideUpEightSlicePizzasEvenly(int numberOfPizzas, int numberOfPeople) {
-        return 0;
+        return (numberOfPizzas * 8) / numberOfPeople;
     }
 
     private int determineLeftoverSlicesOfPizza(int numberOfPizzas, int numberOfPeople) {
