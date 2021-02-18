@@ -45,8 +45,8 @@ public class WeekTwoExercisePartOne {
     }
 
     @Test
-    @Disabled
     // TODO Response:  If the above test works with open frames, why is this test necessary?
+    // Because the previous test didn't have to add up any pins for a score total.
     public void whenRollingOpenFrameScoreIsSumOfRolls() {
         rollMany(20, 1);
 
