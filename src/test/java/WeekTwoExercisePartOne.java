@@ -34,8 +34,8 @@ public class WeekTwoExercisePartOne {
     // TODO Response: Why would you never refactor if you had a failing test?
 
     @Test
-    @Disabled
     // TODO Response: Why did we start with this test?
+    // Because it doesn't involve changes to the existing calculations in BowlingGame.java...?
     public void whenRollingAllGutterBallsScoreIsZero() {
         rollMany(20, 0);
 

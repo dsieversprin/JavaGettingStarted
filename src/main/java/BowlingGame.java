@@ -1,10 +1,12 @@
 public class BowlingGame {
     // TODO: Why must this array have a size of 21?
+    // Tenth frame of bowling has the potential for a 3rd roll.
     int[] rolls = new int[21];
     private int index;
 
     public void roll(int pins) {
         // TODO: Replace this with description of why this postfix operator works here
+        // The works because the current value of index is referenced and after the statement it is incremented.
         rolls[index++] = pins;
     }
 
