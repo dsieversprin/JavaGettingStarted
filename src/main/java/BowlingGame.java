@@ -6,26 +6,27 @@ public class BowlingGame {
 
     public void roll(int pins) {
         // TODO: Replace this with description of why this postfix operator works here
-        // The works because the current value of index is referenced and after the statement it is incremented.
+        // This works because the current value of index is referenced and after the statement it is incremented.
         rolls[index++] = pins;
     }
 
     public int score() {
         int score = 0;
+        int frameTotal = 0;
         // TODO CODE: Change this to use a loop prior to implementing spare and strike calculation and then commit to git
         //            This change should not break the existing tests that pass. This is called refactoring.
 
         // TODO RESPONSE: Why does the subscript need to start with zero?
-        score += rolls[0] + rolls[1];
-        score += rolls[2] + rolls[3];
-        score += rolls[4] + rolls[5];
-        score += rolls[6] + rolls[7];
-        score += rolls[8] + rolls[9];
-        score += rolls[10] + rolls[11];
-        score += rolls[12] + rolls[13];
-        score += rolls[14] + rolls[15];
-        score += rolls[16] + rolls[17];
-        score += rolls[18] + rolls[19];
+        // Because the array index begins with 0
+        for(int i = 0;i < 20;i += 2) {
+            frameTotal = rolls[i] + rolls[i + 1];
+
+            if (frameTotal == 10)
+                score += 10 + rolls[i + 2];
+            else
+                score += frameTotal;
+
+        }
         return score;
     }
 
