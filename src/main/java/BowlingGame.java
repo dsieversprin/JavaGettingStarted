@@ -12,20 +12,29 @@ public class BowlingGame {
 
     public int score() {
         int score = 0;
-        int frameTotal = 0;
+        int frameCount = 1;
         // TODO CODE: Change this to use a loop prior to implementing spare and strike calculation and then commit to git
         //            This change should not break the existing tests that pass. This is called refactoring.
 
         // TODO RESPONSE: Why does the subscript need to start with zero?
         // Because the array index begins with 0
-        for(int i = 0;i < 20;i += 2) {
-            frameTotal = rolls[i] + rolls[i + 1];
 
-            if (frameTotal == 10)
-                score += 10 + rolls[i + 2];
-            else
-                score += frameTotal;
+        for(int i = 0;i < 19;i++) {
 
+            if (rolls[i] == 10) {
+                score += rolls[i] + rolls[i+1] + rolls[i+2];
+                frameCount++;
+                if (frameCount > 10)
+                    i = 20;
+            } else if (rolls[i] + rolls[i+1] == 10) {
+                score += 10 + rolls[i+2];
+                i++;
+                frameCount++;
+            } else {
+                score += rolls[i] + rolls[i + 1];
+                i++;
+                frameCount++;
+            }
         }
         return score;
     }

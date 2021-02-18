@@ -69,7 +69,6 @@ public class WeekTwoExercisePartOne {
     }
 
     @Test
-    @Disabled
     public void whenRollingStrikeFrameScoreIsTenPlusNextTwoRolls() {
         bowlingGame.roll(10);
         bowlingGame.roll(7);
@@ -82,6 +81,7 @@ public class WeekTwoExercisePartOne {
     }
 
     //TODO Response: Why don't we need any more tests than these?
+    // I think a test should be added to handle a perfect game or strikes in the 10th frame.
 
     private void rollMany(int rollCount, int pins) {
         for(int i = 0; i < rollCount; i++) {
