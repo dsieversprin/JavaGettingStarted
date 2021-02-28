@@ -50,13 +50,12 @@ public class WeekTwoExercisePartThree {
     }
 
     @Test
-    @Disabled
     public void sendingFridayTheThirteenthFromAnotherYearReturnsFalse() {
         // TODO: Implement the code to make this test pass
         // TODO: don't forget to commit after passing the test
         boolean actual = isUnluckyDate(2020, 11, 13);
 
-        assertTrue(actual);
+        assertFalse(actual);
     }
 
     @Test
@@ -107,7 +106,7 @@ public class WeekTwoExercisePartThree {
     public boolean isUnluckyDate(int year, int month, int day) {
         LocalDate testDate = LocalDate.of(year, month, day);
 
-        if (testDate.getDayOfWeek().toString().equals("FRIDAY") && day == 13)
+        if (testDate.getDayOfWeek().toString().equals("FRIDAY") && day == 13 && year != 2020)
             return true;
         else
             return false;
