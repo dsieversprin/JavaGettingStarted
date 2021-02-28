@@ -41,7 +41,6 @@ public class WeekTwoExercisePartThree {
     }
 
     @Test
-    @Disabled
     public void sendingNotAFridayTheThirteenthDateReturnsFalse() {
         // TODO: Implement the code to make this test pass
         // TODO: don't forget to commit after passing the test
@@ -106,6 +105,11 @@ public class WeekTwoExercisePartThree {
     }
 
     public boolean isUnluckyDate(int year, int month, int day) {
-        return true;
+        LocalDate testDate = LocalDate.of(year, month, day);
+
+        if (testDate.getDayOfWeek().toString().equals("FRIDAY") && day == 13)
+            return true;
+        else
+            return false;
     }
 }
